@@ -1,0 +1,9 @@
+.classpath
+.project
+.settings/
+bin/
+New Text Document.txt
+target/
+test-output/
+logs/
+screenshots/
