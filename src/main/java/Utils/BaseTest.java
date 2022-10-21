@@ -1,11 +1,14 @@
 package Utils;
 
+import org.testng.annotations.AfterClass;
+
 import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.time.Duration;
 import java.util.Date;
 
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -54,6 +57,7 @@ public class BaseTest {
 		}else if(browser.equalsIgnoreCase("firefox")) {
 		
 		//driver = WebDriverManager.firefoxdriver().create();
+			
 			driver = new FirefoxDriver(foptions);
 		
 		}else if(browser.equalsIgnoreCase("edge")) {
@@ -63,6 +67,7 @@ public class BaseTest {
 		
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		driver.manage().window().setSize(new Dimension(1400, 900));
 		driver.get("https://Keybooks.ro");			
 		//driver.get("https://the-internet.herokuapp.com/javascript_alerts");	
 	}
